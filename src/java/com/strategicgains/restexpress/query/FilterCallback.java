@@ -26,8 +26,7 @@ package com.strategicgains.restexpress.query;
 public interface FilterCallback
 {
 	/**
-	 * @param name
-	 * @param value
+	 * @param component a FilterComponent 
 	 */
 	void filterOn(FilterComponent component);
 }

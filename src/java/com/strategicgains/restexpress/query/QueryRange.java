@@ -136,8 +136,6 @@ public class QueryRange
 
 	/**
 	 * getStart() is a synonym for getOffset().
-	 * 
-	 * @return
 	 */
 	public long getStart()
 	{

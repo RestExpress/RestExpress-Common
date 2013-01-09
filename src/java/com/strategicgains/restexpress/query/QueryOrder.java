@@ -83,7 +83,7 @@ public class QueryOrder
 	/**
 	 * Returns true if this QueryOrder contains sort criteria.
 	 * 
-	 * @return
+	 * @return true if sort criteria are present
 	 */
 	public boolean isSorted()
 	{
