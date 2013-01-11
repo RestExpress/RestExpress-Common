@@ -13,7 +13,7 @@
 	See the License for the specific language governing permissions and
 	limitations under the License.
 */
-package com.strategicgains.restexpress.util;
+package com.strategicgains.restexpress.common.util;
 
 import java.util.Arrays;
 import java.util.Collection;

@@ -14,19 +14,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.strategicgains.restexpress.query;
+package com.strategicgains.restexpress.common.query;
 
 /**
- * Called by QueryFilter.iterate() at query construction time to modify the persistence query
- * (or other query) to reduce the number of results returned.
- * 
  * @author toddf
  * @since May 25, 2011
  */
-public interface FilterCallback
+public class OrderComponent
 {
-	/**
-	 * @param component a FilterComponent 
-	 */
-	void filterOn(FilterComponent component);
+	private boolean isDescending;
+	private String fieldName;
+	
+	public OrderComponent(String fieldName, boolean isDescending)
+	{
+		super();
+		this.isDescending = isDescending;
+		this.fieldName = fieldName;
+	}
+	
+	public boolean isAscending()
+	{
+		return !isDescending;
+	}
+	
+	public boolean isDescending()
+	{
+		return isDescending;
+	}
+	
+	public String getFieldName()
+	{
+		return fieldName;
+	}
 }

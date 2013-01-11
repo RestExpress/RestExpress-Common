@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.strategicgains.restexpress.query;
+package com.strategicgains.restexpress.common.query;
 
 /**
  * Called by QueryOrder.iterate() at query construction time to modify the persistence query
