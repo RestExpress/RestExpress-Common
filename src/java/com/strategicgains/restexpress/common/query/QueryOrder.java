@@ -67,7 +67,7 @@ public class QueryOrder
 	{
 		if (sorts == null)
 		{
-			sorts = new ArrayList<OrderComponent>();
+			sorts = new ArrayList<OrderComponent>(strings.length);
 		}
 
 		for (String sortString : strings)
