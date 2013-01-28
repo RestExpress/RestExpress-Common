@@ -16,9 +16,8 @@
  */
 package com.strategicgains.restexpress.common.query;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Supports the concept of filtering a result based on the 'filter' query parameter.
@@ -34,22 +33,17 @@ import java.util.Map.Entry;
  */
 public class QueryFilter
 {
-	private Map<String, String> filters = null;
+	private List<FilterComponent> filters;
 	
 	public QueryFilter()
 	{
 		super();
 	}
-	
-	/**
-	 * Create a QueryFilter instance from a Map of name/value pairs.
-	 * 
-	 * @param filters name/value pairs to match on.
-	 */
-	public QueryFilter(Map<String, String> filters)
+
+	public QueryFilter(List<FilterComponent> filters)
 	{
 		this();
-		this.filters = new HashMap<String, String>(filters);
+		this.filters = new ArrayList<FilterComponent>(filters);
 	}
 
 	/**
@@ -59,14 +53,14 @@ public class QueryFilter
 	 * @param value the value to match.  Cannot be null.
 	 * @return a reference to this QueryFilter to facilitate method chaining.
 	 */
-	public QueryFilter addCriteria(String name, String value)
+	public QueryFilter addCriteria(String name, FilterOperator operator, String value)
 	{
 		if (filters == null)
 		{
-			filters = new HashMap<String, String>();
+			filters = new ArrayList<FilterComponent>();
 		}
 
-		filters.put(name, value);
+		filters.add(new FilterComponent(name, operator, value));
 		return this;
 	}
 
@@ -90,9 +84,9 @@ public class QueryFilter
 	{
 		if (callback == null || !hasFilters()) return;
 
-		for (Entry<String, String> entry : filters.entrySet())
+		for (FilterComponent filterComponent : filters)
 		{
-			callback.filterOn(new FilterComponent(entry.getKey(), entry.getValue()));
+			callback.filterOn(filterComponent);
 		}
 	}
 }
