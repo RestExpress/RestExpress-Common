@@ -1,3 +1,5 @@
+[![Build Status](https://buildhive.cloudbees.com/job/RestExpress/job/RestExpress-Common/badge/icon)](https://buildhive.cloudbees.com/job/RestExpress/job/RestExpress-Common/)
+
 RestExpress-Common
 ==================
 
