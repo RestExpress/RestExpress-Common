@@ -52,6 +52,7 @@ package com.strategicgains.restexpress.common.query;
  * @since Apr 11, 2011
  */
 public class QueryRange
+implements Cloneable
 {
 	// SECTION: INSTANCE VARIABLES
 
@@ -63,6 +64,13 @@ public class QueryRange
 	public QueryRange()
 	{
 		super();
+	}
+
+	public QueryRange(QueryRange that)
+	{
+		super();
+		this.offset = that.offset;
+		this.limit = that.limit;
 	}
 
 	public QueryRange(long offset, int limit)
@@ -115,7 +123,7 @@ public class QueryRange
 	 */
 	public void setLimit(int value)
 	{
-		if (value <= 0) throw new IllegalArgumentException("limit must be > 0");
+		if (value <= 0) throw new IllegalArgumentException("limit must be >= 0");
 
 		this.limit = Integer.valueOf(value);
 	}
@@ -246,5 +254,22 @@ public class QueryRange
     public boolean isInside(int size, long count)
     {
 	    return (size > 0 && getEnd() < count && !spans(size, count));
+    }
+    
+    // SECTION: CLONEABLE
+    
+    @Override
+    public QueryRange clone()
+    {
+    	try
+        {
+	        return (QueryRange) super.clone();
+        }
+        catch (CloneNotSupportedException e)
+        {
+	        e.printStackTrace();
+        }
+    	
+    	return new QueryRange(this);
     }
 }
