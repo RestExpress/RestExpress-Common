@@ -29,7 +29,7 @@ Release Notes
 
 1.0.3 - In development
 -----
-* Added Callback interface.
+* Added Callback<T> interface.
 
 1.0.2 - May 31, 2013
 --------------------
