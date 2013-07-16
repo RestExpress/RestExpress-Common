@@ -53,7 +53,7 @@ public class QueryFilter
 	 * @param value the value to match.  Cannot be null.
 	 * @return a reference to this QueryFilter to facilitate method chaining.
 	 */
-	public QueryFilter addCriteria(String name, FilterOperator operator, String value)
+	public QueryFilter addCriteria(String name, FilterOperator operator, Object value)
 	{
 		if (filters == null)
 		{

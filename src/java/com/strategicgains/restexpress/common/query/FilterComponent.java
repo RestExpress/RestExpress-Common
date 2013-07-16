@@ -23,9 +23,9 @@ public class FilterComponent
 {
 	private String field;
 	private FilterOperator operator;
-	private String value;
+	private Object value;
 
-	public FilterComponent(String field, FilterOperator operator, String value)
+	public FilterComponent(String field, FilterOperator operator, Object value)
 	{
 		super();
 		this.field = field;
@@ -53,7 +53,7 @@ public class FilterComponent
 		this.operator = operator;
 	}
 
-	public String getValue()
+	public Object getValue()
 	{
 		return value;
 	}
