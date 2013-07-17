@@ -1,46 +1,9 @@
-[![Build Status](https://buildhive.cloudbees.com/job/RestExpress/job/RestExpress-Common/badge/icon)](https://buildhive.cloudbees.com/job/RestExpress/job/RestExpress-Common/)
+Moved to RestExpress/common sub-module.  Please see https://github.com/RestExpress/RestExpress
 
-RestExpress-Common
-==================
+Confusion point: the last release of RestExpress-Common as it's own, stand-alone repository
+was version 1.0.3. However, when RestExpress-Common was combined with RestExpress (core)
+as a sub-module, it was changed to track with the same version as RestExpress.  At that
+time RestExpress was at version 0.9.4.
 
-Utility classes and common functionality across RestExpress projects.
-
-Maven Usage:
-------------
-Stable build:
-```xml
-<dependency>
-	<groupId>com.strategicgains</groupId>
-	<artifactId>RestExpress-Common</artifactId>
-	<version>1.0.2</version>
-</dependency>
-```
-Development (snapshot) build:
-```xml
-<dependency>
-	<groupId>com.strategicgains</groupId>
-	<artifactId>RestExpress-Common</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
-</dependency>
-```
-
-Release Notes
-=============
-
-1.0.3 - In development
------
-* Added Callback<T> interface.
-
-1.0.2 - May 31, 2013
---------------------
-* Made QueryRange Cloneable and added copy constructor, as well as unit tests (copied from RestExpress).
-
-1.0.1 - March 4, 2013
----------------------
-* Optimized QueryOrder.addSort(Strings…) to use strings.length when creating underlying list.
-* Added FilterOperator, changing QueryFilter constructor to require a List<FilterComponent> instead of Map<String, String>.
-
-1.0.0 - January 11, 2013
-------------------------
-* Extracted Query-related objects and StringUtils from RestExpress proper.
-* Repackaged Query-related classes to facilitate extension in RestExpress proper without changing how clients use the factory capabilities.
+Consequently, RestExpress-Common version 0.9.4 is actually newer than RestExpress-Common
+version 1.0.3... just so's ya know... sorry!
